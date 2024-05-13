@@ -32,9 +32,9 @@ def format_plural(unit):
     return 's' if unit != 1 else ''
 
 
-def svg_overwrite(filename, age_data, commit_data, star_data, repo_data, contrib_data, follower_data, loc_data):
+def svg_overwrite(filename, age_data):
     """
-    Parse SVG files and update elements with my age, commits, stars, repositories, and lines written
+    Parse SVG files and update elements with my age
     """
     svg = minidom.parse(filename)
     f = open(filename, mode='w', encoding='utf-8')
