@@ -54,6 +54,16 @@ def svg_element_getter(filename):
     for index in range(len(tspan)): print(index, tspan[index].firstChild.data)
 
 
+def perf_counter(funct, *args):
+    """
+    Calculates the time it takes for a function to run
+    Returns the function result and the time differential
+    """
+    start = time.perf_counter()
+    funct_return = funct(*args)
+    return funct_return, time.perf_counter() - start
+
+
 def formatter(query_type, difference, funct_return=False, whitespace=0):
     """
     Prints a formatted time differential
